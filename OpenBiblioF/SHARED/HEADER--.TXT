@@ -1,0 +1,1 @@
+hola.title;hola.author;hola.responsabilidad_sec;hola.call_nmbr1;hola.Materia;hola.material;hola.coleccion;hola.isbn;hola.issn;hola.autor_corporativo;hola.editor;hola.edicion;hola.publicacion;hola.coleccion_usmarc;hola.Ejemplares;

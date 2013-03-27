@@ -1,0 +1,38 @@
+<!--
+  *********************************************************************************
+  *  sql syntax rules:
+  *  1.  Do not code column aliases.  This will mess up the selection criteria page.
+  *  2.  Do not specify the sort clause in your sql.  The sort order will be specified
+  *      by the user.
+  *  3.  You may, but are not required to specify the where clause
+  *********************************************************************************
+-->
+
+<report>
+  <id>carritoReposicion</id>
+  <title>Carrito de Reposicion</title>
+  <sql>
+  select
+  date_format(h.status_begin_dt,'%d_%m_%Y') as 'h.status_begin_dt',
+  c.barcode_nmbr,
+  b.title,
+  m.last_name,
+  m.first_name,
+  m.barcode_nmbr,  
+  s.last_name
+  from biblio b
+  left join biblio_copy c on b.bibid = c.bibid
+  left join biblio_status_hist h
+  on
+    (
+     h.bibid = c.bibid
+     and h.copyid = c.copyid
+     and h.status_cd like c.status_cd
+     and date_format(h.status_begin_dt,'%Y-%m-%d %H:%i') like date_format(c.status_begin_dt,'%Y-%m-%d %H:%i')
+     and h.mbrid = c.mbrid
+    )
+  left join member m on h.mbrid = m.mbrid
+  left join staff s on h.userid = s.userid
+  where c.status_cd like 'crt'
+  </sql>
+</report>

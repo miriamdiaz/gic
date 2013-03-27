@@ -1,0 +1,232 @@
+/* :: : :: : :: Tags Generales HTML :: : :: : :: */
+BODY {
+/*    background: #ffffff;*/
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+/*    font-size: 10px;*/
+}
+
+H1,H2,H3{
+
+}
+
+.primary A {
+    text-decoration: none;
+    color: #ffffff;
+    /*background: #0c7caa;*/
+    text-align: center;
+    font-size: 11px;
+
+}
+.primary A:hover {
+    text-decoration: none;
+    color: #ffffff;
+    /*background: #0c7caa;*/
+    text-align: center;
+    font-size: 11px;
+
+}
+.primary A:link {
+    text-decoration: none;
+    color: #ffffff;
+    /*background: #0c7caa;*/
+    text-align: center;
+    font-size: 11px;
+}
+.primary A:visited {
+    text-decoration: none;
+    color: #ffffff;
+    /*background: #0c7caa;*/
+    text-align: center;
+    font-size: 11px;
+
+}
+
+
+INPUT {
+    /*border:1px solid #999999;*/
+    font-size: 11px;
+}
+
+TEXTAREA {
+    border:1px solid #999999;
+}
+
+SELECT {
+    border:1px solid #999999;
+}
+
+TABLE {
+    border: 0;
+}
+
+/* :: : :: : :: Clases :: : :: : :: */
+
+/*.clsTituloGrande {
+    color: #999999;
+    text-align:center;
+    font-size:25px;
+}*/
+
+.clsTituloGrandeCurrent {
+    background: #0c7caa;
+    color: #ffffff;
+    text-align:center;
+    font-size:25px;
+}
+
+
+/*.clsTituloChico {
+    color: #999999;
+    text-align:center;	
+    font-size:20px;
+}*/
+
+.clsExito {
+    /*background: green;*/
+    color: green;
+}
+
+.clsError {
+    /*background: red;*/
+    color: red;
+}
+
+.clsNota {
+    color: #666666;
+    font-size:12px;
+}
+
+.clsTextoChico {
+    color: #666666;
+    font-size:8px;
+}
+
+.clsTextoCantFilas {
+    color: #666666;
+    font-size:10px;
+}
+
+.clsBotonPagina {
+    border: 1px dashed #0c7caa;
+    font-size: 9px;
+    color: #0c7caa;
+    background-color: #ffffff;
+    cursor:pointer;
+    cursor:hand;
+    }
+
+.clsBotonPagina:hover {
+    border: 1px dashed #0c7caa;
+    font-size: 9px;
+    color: #0c7caa;
+    background-color: #f9f7f7;
+    cursor:pointer;
+    cursor:hand;
+    }
+
+.clsContadorTextarea {
+    text-align:right; 
+    color:#ffffff;
+    background:#999999;
+    font-size:9px;
+    border: 1px dashed #666666;
+    }
+
+.clsBoton {
+    color:#333333;
+    background:#cccccc;
+    font-size: 11px;
+}    
+
+.clsBoton:hover {
+    color:#999999;
+    background:#ffffff;
+}    
+
+.clsLoading {
+    padding: 2px;
+    background: rgb(204, 68, 68) none repeat scroll 0%;
+    position: absolute;
+    z-index: 1;
+    -moz-background-clip: initial;
+    -moz-background-origin: initial;
+    -moz-background-inline-policy: initial;
+     color: white;
+     font-size: 75%;
+     top: 1px;
+     right: 16px;
+     visibility:visible;
+}
+
+/* --------> Tabla Browse*/
+
+.clsTablaBrowse {
+    font-family: verdana, Arial;
+    font-size: 12px;
+    border-top: 1px dashed #cccccc;
+    border-left: 1px dashed #cccccc; 
+    border-right: 1px dashed #999999; 
+    border-bottom: 1px dashed #999999; 
+    background: #ffffff;
+}
+
+.clsTablaBrowse TH {
+    color: #ffffff;
+    background: #0c7caa;
+    text-align: center;
+    font-size: 11px;
+}
+
+.clsTablaBrowse TH A {
+    text-decoration: none;
+    color: #ffffff;
+    background: #0c7caa;
+    text-align: center;
+    font-size: 11px;
+}
+
+
+
+/*.primary TR:hover {
+    background: #cccccc;
+    font-size: 11px;
+}*/
+
+.clsTablaBrowseFilaPar {
+    background: #ffffff;
+    font-size: 11px;
+}
+
+.clsTablaBrowseFilaImpar {
+    background: #f1f1f1;
+    font-size: 11px;
+}
+
+/* --------> Tabla Create*/
+
+.clsTablaCreate {
+    font-family: verdana, Arial;
+    font-size: 11px;
+    border-top: 1px dashed #cccccc;
+    border-left: 1px dashed #cccccc; 
+    border-right: 1px dashed #999999; 
+    border-bottom: 1px dashed #999999; 
+/*    background: #ffffff;*/
+}
+
+.clsTablaCreate TH {
+/*    color: #ffffff;
+    background: #0c7caa;
+    text-align: center;*/
+    font-size: 11px;
+}
+
+.clsTablaCreate TD {
+    /*background: #f9f7f7;*/
+    font-size: 11px;
+}
+
+.clsQueryResult {
+    background: #ffffff;
+    font-size: 10px;
+}

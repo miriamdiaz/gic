@@ -1,0 +1,79 @@
+<!--
+  *********************************************************************************
+  *  sql syntax rules:
+  *  1.  Do not code column aliases.  This will mess up the selection criteria page.
+  *  2.  Do not specify the sort clause in your sql.  The sort order will be specified
+  *      by the user.
+  *  3.  You may, but are not required to specify the where clause
+  *********************************************************************************
+-->
+
+<report>
+  <id>estadisticoOperaciones</id>
+  <title>Estadistico Operaciones</title>
+  <sql> SELECT *
+FROM
+(SELECT NOMBRE AS MES,
+	IF(ISNULL(MAX(PRESTAMOS)),'0',MAX(PRESTAMOS)) AS PRESTAMOS,
+	IF(ISNULL(MAX(DEVOLUCIONES)),'0',MAX(DEVOLUCIONES)) AS DEVOLUCIONES,
+	IF(ISNULL(MAX(SANCIONES)),'0',MAX(SANCIONES)) AS SANCIONES,
+	IF(ISNULL(MAX(PRESTAMOS)),'0',MAX(PRESTAMOS))+
+	IF(ISNULL(MAX(DEVOLUCIONES)),'0',MAX(DEVOLUCIONES))+
+    IF(ISNULL(MAX(SANCIONES)),'0',MAX(SANCIONES)) AS TOTALES
+	FROM MESES M
+	LEFT JOIN
+	(
+	SELECT date_format(status_begin_dt,'%m') AS MES, COUNT(*) AS PRESTAMOS, 0 AS DEVOLUCIONES, 0 AS SANCIONES
+	FROM BIBLIO_STATUS_HIST H
+	WHERE STATUS_CD = 'OUT' AND date_format(status_begin_dt,'%Y') = -1
+	GROUP BY date_format(status_begin_dt,'%m')
+	UNION
+	SELECT date_format(status_begin_dt,'%m') AS MES, 0 AS PRESTAMOS, COUNT(*) AS DEVOLUCIONES, 0 AS SANCIONES
+	FROM BIBLIO_STATUS_HIST H
+	WHERE STATUS_CD = 'CRT' AND date_format(status_begin_dt,'%Y') = -1
+	GROUP BY date_format(status_begin_dt,'%m')
+	UNION
+	SELECT date_format(FECHA_APLICO_SANCION,'%m') AS MES, 0 AS PRESTAMOS, 0 AS DEVOLUCIONES, COUNT(*) AS SANCIONES
+	FROM MEMBER_SANCION_HIST H
+	WHERE date_format(FECHA_APLICO_SANCION,'%Y') = '2007'
+	GROUP BY date_format(FECHA_APLICO_SANCION,'%m')
+	) A ON A.MES = M.NUMERO
+	GROUP BY NOMBRE
+	ORDER BY M.NUMERO
+) E1
+UNION
+SELECT 'Totales' AS MES,
+SUM(PRESTAMOS) AS PRESTAMOS,
+SUM(DEVOLUCIONES) AS DEVOLUCIONES,
+SUM(SANCIONES) AS SANCIONES,
+SUM(TOTALES) AS TOTALES
+FROM
+(
+SELECT NOMBRE AS MES,
+	IF(ISNULL(MAX(PRESTAMOS)),'0',MAX(PRESTAMOS)) AS PRESTAMOS,
+	IF(ISNULL(MAX(DEVOLUCIONES)),'0',MAX(DEVOLUCIONES)) AS DEVOLUCIONES,
+	IF(ISNULL(MAX(SANCIONES)),'0',MAX(SANCIONES)) AS SANCIONES,
+	IF(ISNULL(MAX(PRESTAMOS)),'0',MAX(PRESTAMOS))+
+	IF(ISNULL(MAX(DEVOLUCIONES)),'0',MAX(DEVOLUCIONES))+
+    IF(ISNULL(MAX(SANCIONES)),'0',MAX(SANCIONES)) AS TOTALES
+	FROM MESES M
+	LEFT JOIN
+	(
+	SELECT date_format(status_begin_dt,'%m') AS MES, COUNT(*) AS PRESTAMOS, 0 AS DEVOLUCIONES, 0 AS SANCIONES
+	FROM BIBLIO_STATUS_HIST H
+	WHERE STATUS_CD = 'OUT' AND date_format(status_begin_dt,'%Y') = -1
+	GROUP BY date_format(status_begin_dt,'%m')
+	UNION
+	SELECT date_format(status_begin_dt,'%m') AS MES, 0 AS PRESTAMOS, COUNT(*) AS DEVOLUCIONES, 0 AS SANCIONES
+	FROM BIBLIO_STATUS_HIST H
+	WHERE STATUS_CD = 'CRT' AND date_format(status_begin_dt,'%Y') = -1
+	GROUP BY date_format(status_begin_dt,'%m')
+	UNION
+	SELECT date_format(FECHA_APLICO_SANCION,'%m') AS MES, 0 AS PRESTAMOS, 0 AS DEVOLUCIONES, COUNT(*) AS SANCIONES
+	FROM MEMBER_SANCION_HIST H
+	WHERE date_format(FECHA_APLICO_SANCION,'%Y') = -1
+	GROUP BY date_format(FECHA_APLICO_SANCION,'%m')
+	) A ON A.MES = M.NUMERO
+	GROUP BY NOMBRE
+	ORDER BY M.NUMERO
+) E2

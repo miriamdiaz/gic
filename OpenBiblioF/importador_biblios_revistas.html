@@ -1,0 +1,41 @@
+<html>
+<head>
+<style>
+input.button {
+  background-color: #CCCC99;
+  border-color: #CCCC99;
+  border-left-color: #CCCC99;
+  border-top-color: #CCCC99;
+  border-bottom-color: #CCCC99;
+  border-right-color: #CCCC99;
+  padding: 2;
+  font-family: verdana,arial,helvetica;
+  color: #000000;
+}
+</style>
+<title>Importador SIUNPA</title>
+<script language="JavaScript">
+function enviar()
+{
+document.importar.aceptar.value="Procesando...";
+document.importar.aceptar.disabled=true;
+document.importar.cancelar.disabled=true;
+document.importar.submit();
+}
+</script>
+</head>
+<body>
+<table>
+<form name="importar" action="importador_biblios_revistas.php" method="post">
+<tr>
+<td><div align="center">Se importaran las tablas biblio, biblio_copy, collection_dm y material_type_dm.<br>Desea Continuar ?
+<br>(Durante el transcurso de esta operacion, NO cierre esta ventana)</div>
+</td>
+</tr>
+<tr><td><div align="center"><input class="button" type="button" name="aceptar" value="Aceptar" onClick="enviar()">
+<input class="button" type="button" name="cancelar" value="Cancelar" onClick="self.close()">
+<input type="hidden" name="aprobado" value="1">
+</div></td></tr>
+</form>
+</table>
+</html>

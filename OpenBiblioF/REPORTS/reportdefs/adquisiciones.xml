@@ -1,0 +1,40 @@
+<!--
+  *********************************************************************************
+  *  sql syntax rules:
+  *  1.  Do not code column aliases.  This will mess up the selection criteria page.
+  *  2.  Do not specify the sort clause in your sql.  The sort order will be specified
+  *      by the user.
+  *  3.  You may, but are not required to specify the where clause
+  *********************************************************************************
+-->
+
+<report>
+  <id>adquisiciones</id>
+  <title>Adquisiciones</title>
+  <sql>
+	SELECT
+	adquisicion.adqid,
+	lower(adquisicion.title) as 'title',
+	lower(adquisicion.author) as 'author',
+	lower(adquisicion.isbn) as 'isbn',
+	lower(adquisicion.edicion_dt) as 'edicion_dt',
+	lower(adquisicion.editorial) as 'editorial',
+	lower(adquisicion.ejemplares) as 'ejemplares',
+	lower(adquisicion.created_dt) as 'created_dt',
+	lower(concepto_dm.description) as 'concepto_dm.description',
+	lower(area_dm.description) as 'area_dm.description',
+	lower(estado_dm.description) as 'estado_dm.description',
+	lower(member.last_name) as 'member.last_name',
+	lower(member.first_name) as 'member.first_name',
+        lower(member.barcode_nmbr) as 'member.barcode_nmbr',
+	lower(biblio_cod_library.code) as 'biblio_cod_library.description',
+        lower(adquisicion.observacion) as 'observacion'
+	from adquisicion
+	left join concepto_dm on concepto_dm.code = adquisicion.concepto_cd
+	left join area_dm on area_dm.code = adquisicion.area_cd
+	left join member on member.mbrid = adquisicion.mbrid
+	left join biblio_cod_library on biblio_cod_library.code = adquisicion.libraryid
+	left join estado_dm on estado_dm.code = adquisicion.estado_cd
+    
+  </sql>
+</report>

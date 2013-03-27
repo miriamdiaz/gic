@@ -1,0 +1,276 @@
+  /*********************************************************
+ *  Body Style
+ *********************************************************/
+body {
+  background-color: #ffffff}
+
+/*********************************************************
+ *  Font Styles
+ *********************************************************/
+font.primary {
+  color: #000000;
+  font-size: 10px;
+  font-family: verdana,arial,helvetica;
+}
+font.alt1 {
+  color: #000000;
+  font-size: 13px;
+  font-family: verdana,arial,helvetica;
+}
+font.alt1tab {
+  color: #000000;
+  font-size: 13px;
+  font-family: verdana,arial,helvetica;
+  font-weight: bold;
+}
+font.alt2 {
+  color: #ffffff;
+  font-size: 13px;
+  font-family: verdana,arial,helvetica;
+  font-weight: bold;
+}
+font.error {
+  color: #990000;
+  font-size: 13px;
+  font-family: verdana,arial,helvetica;
+  font-weight: bold;
+}
+font.small {
+  font-size: 10px;
+  font-family: verdana,arial,helvetica;
+}
+a.nav {
+  color: #000000;
+  font-size: 10px;
+  font-family: verdana,arial,helvetica;
+  text-decoration: none;
+  background-color: #CCCC99;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1}
+h1 {
+  font-size: 16px;
+  font-family: verdana,arial,helvetica;
+  font-weight: normal;
+}
+
+/*********************************************************
+ *  Link Styles
+ *********************************************************/
+a:link {
+  color: #0000aa;
+}
+a:visited {
+  color: #0000aa;
+}
+a.primary:link {
+  color: #0000aa;
+}
+a.primary:visited {
+  color: #0000aa;
+}
+a.alt1:link {
+  color: #0000aa;
+}
+a.alt1:visited {
+  color: #0000aa;
+}
+a.alt2:link {
+  color: #ffffff;
+}
+a.alt2:visited {
+  color: #ffffff;
+}
+a.tab:link {
+  color: #ffffff;
+  font-size: 13px;
+  font-family: verdana,arial,helvetica;
+  font-weight: bold;
+  text-decoration: none
+}
+a.tab:visited {
+  color: #ffffff;
+  font-size: 13px;
+  font-family: verdana,arial,helvetica;
+  font-weight: bold;
+  text-decoration: none
+}
+a.tab:hover {text-decoration: underline}
+
+/*********************************************************
+ *  Table Styles
+ *********************************************************/
+table.primary {
+  border-collapse: collapse
+}
+table.border {
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1}
+th {
+  background-color: #003366;
+  color: #ffffff;
+  font-size: 10px;
+  font-family: verdana,arial,helvetica;
+  padding: 2;
+  border-style: solid;
+  font-weight: bold;
+  border-color: #000000;
+  border-width: 1;
+  height: 1
+}
+th.rpt {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 11px;
+  font-family: Arial;
+  font-weight: bold;
+  padding: 2;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1;
+  text-align: left;
+  vertical-align: bottom;
+}
+td.primary {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 10px;
+  font-family: verdana,arial,helvetica;
+  padding: 2;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1}
+td.rpt {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 11px;
+  font-family: Arial;
+  padding: 2;
+  border-top-style: none;
+  border-bottom-style: none;
+  border-left-style: solid;
+  border-left-color: #000000;
+  border-left-width: 1;
+  border-right-style: solid;
+  border-right-color: #000000;
+  border-right-width: 1;
+  text-align: left;
+  vertical-align: top;
+}
+td.primaryNoWrap {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 13px;
+  font-family: verdana,arial,helvetica;
+  padding: 2;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1;
+  white-space: nowrap
+}
+
+td.title {
+  background-color: #7695C0;
+  color: #ffffff;
+  font-size: 26px;
+  font-family: Arial,Helvetica,sans-serif;
+  padding: 2;
+  font-weight: normal;
+  border-color: #000000;
+  border-width: 1;
+  text-align: left}
+td.alt1 {
+  background-color: #CCCC99;
+  color: #000000;
+  font-size: 13px;
+  font-family: verdana,arial,helvetica;
+  padding: 2;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1}
+td.tab1 {
+  background-color: #CCCC99;
+  color: #000000;
+  font-size: 13px;
+  font-family: verdana,arial,helvetica;
+  font-weight: bold;
+  padding: 2;
+}
+td.tab2 {
+  background-color: #003366;
+  color: #ffffff;
+  font-size: 13px;
+  font-family: verdana,arial,helvetica;
+  font-weight: bold;
+  padding: 2;
+}
+td.noborder {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 10px;
+  font-family: verdana,arial,helvetica;
+  padding: 2;
+}
+/*********************************************************
+ *  Form Styles
+ *********************************************************/
+input.button {
+  background-color: #CCCC99;
+  border-color: #CCCC99;
+  border-left-color: #CCCC99;
+  border-top-color: #CCCC99;
+  border-bottom-color: #CCCC99;
+  border-right-color: #CCCC99;
+  padding: 2;
+  font-family: verdana,arial,helvetica;
+  color: #000000;
+}
+input.navbutton {
+  background-color: #003366;
+  border-color: #003366;
+  border-left-color: #003366;
+  border-top-color: #003366;
+  border-bottom-color: #003366;
+  border-right-color: #003366;
+  padding: 2;
+  font-family: verdana,arial,helvetica;
+  color: #ffffff;
+}
+input {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  border-left-color: #ffffff;
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+  border-right-color: #ffffff;
+  padding: 0px;
+  scrollbar-base-color: #CCCC99;
+  font-family: verdana,arial,helvetica;
+  color: #000000;
+}
+textarea {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  border-left-color: #ffffff;
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+  border-right-color: #ffffff;
+  padding: 0px;
+  scrollbar-base-color: #CCCC99;
+  font-family: verdana,arial,helvetica;
+  color: #000000;
+  font-size: 13px;
+}
+select {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  border-left-color: #ffffff;
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+  border-right-color: #ffffff;
+  padding: 0px;
+  scrollbar-base-color: #CCCC99;
+  font-family: verdana,arial,helvetica;
+  color: #000000;
+}
